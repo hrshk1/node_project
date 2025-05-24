@@ -18,3 +18,6 @@ app.use('/menu',menuRoutes)
 app.listen(3000, () => {
     console.log('listening on port 3000')
 })
+//if file is ready to be commited that means it is only added then vs code will show green color
+//if commited, it becomes normal color
+//if committed and chnages are being made then yellow color will appear
