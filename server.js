@@ -13,6 +13,19 @@ app.use('/menu',menuRoutes)
 //similarly you can make many such routes for different endpoints
 
 
+//Middleware function:
+//we can name logRequest anything but there must be the three parameters i.e req,res,next and the function should be used in the middle of the get
+
+const logRequest = (req,res,next)=>{
+    console.log(`${new Date().toLocaleString()} Request Made to: ${req.originalUrl}`);
+    //here new Date means making a new object and since it gives date and time object we need to change it to string so we use toLocaleString()
+    //the req.originalUrl return the name of the url that has been requested
+    next(); //move on to the next phase
+}
+
+app.get('/',logRequest,(req,res)=>{
+    res.send('Welcome to our Hotel');
+})
 
 const PORT = process.env.PORT ||3000
 app.listen(PORT, () => {
