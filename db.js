@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-//const mongoURL = 'mongodb://localhost:27017/menu';
-const mongoURL = process.env.MONGO_URI;
+const mongoURL = 'mongodb://localhost:27017/menu';
+// const mongoURL = process.env.MONGO_URI;
 
 mongoose.connect(mongoURL) // ✅ Remove deprecated options
 

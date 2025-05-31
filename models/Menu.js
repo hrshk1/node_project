@@ -24,6 +24,14 @@ const menuItemSchema = new mongoose.Schema({
     num_sales:{
         type: Number,
         default: 0,
+    },
+    username:{
+        type: String,
+        required: true,
+    },
+    password:{
+        type: String,
+        required: true,
     }
 })
 const Menu = mongoose.model('Menu', menuItemSchema);
