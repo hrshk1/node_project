@@ -3,9 +3,9 @@ const app = express();
 const db = require('./db');
 const Menu = require('./models/Menu');
 const { error } = require('console');
-app.use(express.json()); //middleware
+app.use(express.json()); //middleware //bodyparser
 require('dotenv').config();
-const passport = require('passport')
+const passport = require('./auth')
 
 
 
@@ -53,3 +53,8 @@ app.listen(PORT, () => {
 
 //only after git push, changes are reflected in git hub
 //similarly there is git pull to extract changes in github to local
+
+
+//bcrypt
+//adds some salt and then hashes the function
+//its code is written in schema file as a middleware and is run befire saving the data into datbase
